@@ -4,6 +4,7 @@
     <title>Tuxedo Cat Coffee</title>
     <link type="text/css" rel="stylesheet" href="cafe.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script language="JavaScript" src="order.js"></script>
 </head>
 <body>
     <header>
@@ -13,27 +14,56 @@
         <form id="order_form" name="order_form" action="checkout.html" method="get">
             <section id="menu">
             	<h2>Menu</h2>
-            	<p>Click an item to add it to your order.</p>
+            	<span>Click an item to add it to your order.</span>
             	<ul>
-            		<li><a href="#"><img id="images/espresso_info.jpg" src="images/espresso.jpg" alt="espresso"/></a></li>
-            		<li><a href="#"><img id="images/latte_info.jpg" src="images/latte.jpg" alt="latte"/></a></li>
-            		<li><a href="#"><img id="images/cappuccino_info.jpg" src="images/cappuccino.jpg" alt="cappuccino"/></a></li>
-            		<li><a href="#"><img id="images/coffee_info.jpg" src="images/coffee.jpg" alt="coffee"/></a></li>
-            		<li><a href="#"><img id="images/biscotti_info.jpg" src="images/biscotti.jpg" alt="biscotti"/></a></li>
-            		<li><a href="#"><img id="images/scone_info.jpg" src="images/scone.jpg" alt="scone"/></a></li>
+            		<li>
+						<div class="box">
+							<a href="javascript:void(0)" value="Espresso" onclick="getPrice(this)"><img id="images/espresso_info.jpg" src="images/espresso.jpg" alt="espresso"/></a>
+							<p class="detail">Espresso $1.23</p>
+						</div>
+					</li>
+            		<li>
+						<div class="box">
+							<a href="javascript:void(0)" value="Latte" onclick="getPrice(this)"><img id="images/latte_info.jpg" src="images/latte.jpg" alt="latte"/></a>
+							<p class="detail">Latte $3.21</p>
+						</div>
+					</li>
+            		<li>
+						<div class="box">
+							<a href="javascript:void(0)" value="Cappuccino" onclick="getPrice(this)"><img id="images/cappuccino_info.jpg" src="images/cappuccino.jpg" alt="cappuccino"/></a>
+							<p class="detail" >Cappuccino $3.45</p>
+						</div>
+					</li>
+            		<li>
+						<div class="box">
+							<a href="javascript:void(0)" value="Coffee" onclick="getPrice(this)"><img id="images/coffee_info.jpg" src="images/coffee.jpg" alt="coffee"/></a>
+							<p class="detail">Coffee $4.55</p>
+						</div>
+					</li>
+            		<li>
+						<div class="box">
+							<a href="javascript:void(0)" value="Biscotti" onclick="getPrice(this)"><img id="images/biscotti_info.jpg" src="images/biscotti.jpg" alt="biscotti"/></a>
+							<p class="detail">Biscotti $3.19</p>
+						</div>
+					</li>
+            		<li>
+						<div class="box">
+							<a href="javascript:void(0)" value="Scone" onclick="getPrice(this)"><img id="images/scone_info.jpg" src="images/scone.jpg" alt="scone"/></a>
+							<p class="detail">Scone $2.95</p>
+						</div>
+					</li>
             	</ul>
             </section>
 
             <section>
             	<h2>Your Order</h2>
             	<section>
-            		<select id="order" name="order" size="6">
-            		</select>
-            		<p id="total">&nbsp;</p>            		
+            		<textarea id="order" name="order" size="6" ></textarea>
            		</section>
+				<p id="total">Total:</p>
             	<section id="buttons">
-           			<input type="button" name="place_order" id="place_order" value="Place Order">
-           			<input type="button" name="clear_order" id="clear_order" value="Clear Order">				            		
+           			<input type="button" name="place_order" id="place_order" value="Place Order" onclick="calculate()">
+           			<input type="button" name="clear_order" id="clear_order" value="Clear Order" onclick="clear()">
             	</section>
             </section>   
 

@@ -25,26 +25,49 @@ h2 {
 select {
 	width: 305px;
 }
+
+#menu {
+	/*position: absolute;*/
+	/*overflow: hidden;*/
+}
 #menu h2 {
 	padding-top: 1em;
 
 }
-#menu p {
+#menu span {
 	margin-top: 0;
 	margin-bottom: .7em;
+}
+#menu .box {
+	/*position: relative;*/
 }
 ul {
 	list-style-type: none;
 	padding-left: 0;
 	margin-top: 0;
+	position: relative;
+}
+div {
+	position: relative;
+	float: left;
 }
 ul li {
 	display: inline;
     padding: 5px 0 5px 0;
 }
+p{
+	display: None;
+}
+li:hover p{
+	display: block;
+}
 #total {
 	margin-top: .5em;
 	margin-bottom: .7em;
+}
+
+textarea {
+	width: 200px;
 }
 input {
     width: 150px;
@@ -53,3 +76,4 @@ input {
 #buttons {
 	margin-top: 0;
 }
+
